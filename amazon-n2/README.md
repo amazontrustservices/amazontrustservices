@@ -1,6 +1,6 @@
-# Amazon N2 root certificates
+# Amazon N2 root and intermediate certificates
 
-This directory holds the root CA certificates for Amazon N2 certificates issued by AWS Certificate Manager (ACM). Add these roots into the trust store of any client or server that must verify an Amazon N2 certificate.
+This directory holds the root and intermediate CA certificates for Amazon N2 certificates issued by AWS Certificate Manager (ACM). Add the roots into the trust store of any client or server that must verify an Amazon N2 certificate.
 
 ## Intended use
 
@@ -28,8 +28,9 @@ The Amazon SFG2 N2 RSA 2048, ECDSA 256 and ECDSA 384 roots also have a certifica
 |---|---|
 | `roots/pem/`, `roots/der/` | The eight self-signed roots, PEM (`.pem`) and DER (`.cer`) |
 | `cross-signed-roots/pem/`, `cross-signed-roots/der/` | The three Starfield G2 cross-signed certificates (`…-Cross-Signed`) |
+| `intermediates/pem/`, `intermediates/der/` | The 48 intermediate CAs, eight under each root that issues certificates (`…-M007` to `…-M014`) |
 
-| Root | Valid until |
+| Certificate | Valid until |
 |---|---|
 | Amazon N2 RSA 2048 Root M1 | 2046-08-28 |
 | Amazon N2 ECDSA 256 Root M1 | 2046-08-28 |
@@ -40,6 +41,7 @@ The Amazon SFG2 N2 RSA 2048, ECDSA 256 and ECDSA 384 roots also have a certifica
 | Amazon SFG2 N2 ECDSA 384 Root M1 (self-signed) | 2036-08-30 |
 | Amazon SFG2 N2 RSA 4096 Root M1 (self-signed) | 2036-08-30 |
 | Amazon SFG2 N2 roots, cross-signed by Starfield G2 | 2037-12-30 |
+| Intermediate CAs (all 48) | 2029-09-27 |
 
 ## Verify a file
 
@@ -66,4 +68,4 @@ openssl verify -partial_chain -CAfile SFSRootCAG2.pem \
 
 ## Provenance
 
-Amazon Trust Services generated the self-signed roots at a key ceremony on 2026-09-02 and issued the Starfield G2 cross-signed certificates at a key ceremony on 2026-09-28. The files here are the certificates produced by those ceremonies, unchanged.
+Amazon Trust Services generated the self-signed roots at a key ceremony on 2026-09-02 and issued the Starfield G2 cross-signed certificates and the intermediate CAs at a key ceremony on 2026-09-28. The files here are the certificates produced by those ceremonies, unchanged.
