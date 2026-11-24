@@ -5,7 +5,7 @@ This repository publishes the public certificates of Amazon Trust Services (ATS)
 | Folder | Contents | Trusted by |
 |---|---|---|
 | [`web-pki/`](web-pki/) | Amazon Root CA 1–4, Starfield Services Root Certificate Authority - G2, and their cross-signed roots and intermediates | Browsers and operating systems |
-| [`amazon-n2/`](amazon-n2/) | Amazon N2 roots for service-to-service TLS and mutual TLS (mTLS) certificates issued by AWS Certificate Manager | Only trust stores you configure; not browsers |
+| [`amazon-n2/`](amazon-n2/) | Amazon N2 roots and intermediates for service-to-service TLS and mutual TLS (mTLS) certificates issued by AWS Certificate Manager | Only trust stores you configure; not browsers |
 
 Each folder has its own README with the files it contains and how to verify them.
 
